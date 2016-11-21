@@ -1,7 +1,6 @@
 function toWeirdCase(string){
   string = string.toLowerCase();
   var array = string.split(" ");
-  console.log(array);
   var newArray = [];
   for(var i = 0; i < array.length; i++) {
     var word = array[i];  
@@ -19,7 +18,6 @@ function toWeirdCase(string){
       newArray.push(" ");
     }
   }
-
     var updatedArray = newArray.join("").toString();
     return updatedArray;
 }
