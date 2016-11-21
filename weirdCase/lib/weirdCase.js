@@ -1,29 +1,30 @@
-function toWeirdCase(string) {
-  //even indices of each word in the string should be UPPERCASE
-  //odd indices are lowercase
-  //ex) hello i am rosie = HeLlo I Am RoSiE
-  //after using indexOf to find spaces, the next index
-  //should be capitalized ...assign next index = 0? keep looping?
-
-  string = string.split('');
-  function removeAtIndex() {
-
-  }
-
-  var space = string.indexOf(' ');
-  console.log(space);
-
-  for(var i = 0; i < string.length; i++) {
-    if(i % 2 === 0) {
-      string[i] = string[i].toUpperCase();
+function toWeirdCase(string){
+  string = string.toLowerCase();
+  var array = string.split(" ");
+  console.log(array);
+  var newArray = [];
+  for(var i = 0; i < array.length; i++) {
+    var word = array[i];  
+    for(var j = 0; j < word.length; j++) { 
+      if(j % 2 === 0) {
+        var letter = word.charAt(j).toUpperCase();
+      }
+      else {
+        letter = word.charAt(j);
+      }
+      newArray.push(letter);    
     }
-    else {
-      string[i] = string[i].toLowerCase();
+
+    if(i < array.length - 1){
+      newArray.push(" ");
     }
   }
-  string = string.join('');
-  // return(string);
-  console.log(string);
+
+    var updatedArray = newArray.join("").toString();
+    return updatedArray;
 }
 
-toWeirdCase('This is a test');
+new toWeirdCase('TESTING testing one TWO three');
+new toWeirdCase('one fish two fish red fish blue fish');
+new toWeirdCase('what');
+
