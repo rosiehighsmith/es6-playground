@@ -2,24 +2,22 @@ function toWeirdCase(string){
   string = string.toLowerCase();
   var array = string.split(" ");
   var newArray = [];
-  for(var i = 0; i < array.length; i++) {
-    var word = array[i];  
-    for(var j = 0; j < word.length; j++) { 
-      if(j % 2 === 0) {
-        var letter = word.charAt(j).toUpperCase();
+  for(var arrayIndex = 0; arrayIndex < array.length; arrayIndex++) {
+    var word = array[arrayIndex];  
+    for(var wordIndex = 0; wordIndex < word.length; wordIndex++) { 
+      if(wordIndex % 2 === 0) {
+        var letter = word.charAt(wordIndex).toUpperCase();
       }
       else {
-        letter = word.charAt(j);
+        letter = word.charAt(wordIndex);
       }
       newArray.push(letter);    
     }
-
-    if(i < array.length - 1){
+    if(arrayIndex < array.length - 1){
       newArray.push(" ");
     }
   }
-    var updatedArray = newArray.join("").toString();
-    return updatedArray;
+    return newArray.join("").toString();
 }
 
 new toWeirdCase('TESTING testing one TWO three');
