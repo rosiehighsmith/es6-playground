@@ -1,4 +1,4 @@
-function reverseWord(string) {
+function spinWords(string) {
   var array = string.split(' ');
 
   array.forEach(function(word, index) {
