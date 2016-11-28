@@ -20,7 +20,9 @@ function longestPalindrome(s){
       //skip iteration if subs_string length = 0
       continue; } 
       //assign longest_p_length to sub_subs if longest so far
+      //console.log('checking: '+ sub_subs);
       if (isPalindrome(sub_subs)) {
+        //console.log('palindrome: '+ sub_subs);
         if (sub_subs.length > longest_p_length) {
           longest_p_length = sub_subs.length;
           longest_p = sub_subs;
